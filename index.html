@@ -1,46 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/style.css">
-    <script src="/script.js"defer></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    <div class="all">
-        <div class="block">
+    <link rel="stylesheet" href="/style.css" />
+    <script src="/script.js"defer></script>
+  </head>
 
-            <div class="header"></div>
-            <h1>To-Do List</h1>
-            <div class="az1">
-                <img src="pictures/Group 73.svg" alt=".">
-            </div>
-            <div class="az2">
-                <img src="pictures/Group 91.svg" alt=".">
-            </div>
-            <div class="content">
-                <div class="text">
-                    <ul id="listMain" class="wrap"></ul>
-                    <div class="list">
-                        <input type="text" id="mainpart">
-                        <div class="iconContainer">
-                          <!-- <div class="close">x</div> -->
-                             <ion-icon name="close-outline" class="close"></ion-icon> 
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="addButton">
-                <button>
-                    <span class="plus"><p>+</p></span>
-                    <span class="add">Добавить</span>
-                </button>
-            </div>
-
+  <body>
+    <div class="main">
+      <div class="container">
+        <div class="header"></div>
+        <h2>To-Do List</h2>
+        <div class="image-sort">
+          <img src="/pictures/Group 74.svg" alt="" />
         </div>
+        <div class="image-reverse">
+          <img src="pictures/Group 90.svg" alt="" />
+        </div>
+        <div class="inp-div">
+          <ul class="ul-div"></ul>
+          <div class="inp-list">
+            <input type="text" class="tam" />
+            <button class="clear-btn"><img src="/pictures/Group 77.svg" alt="" /></button>
+          </div>
+        </div>
+        <div class="btn-main-add">
+          <div class="btn-container-add">
+            <button class="btn-add">
+              <div class="btn-plus">
+                <p>+</p>
+              </div>
+              <div class="btn-text">
+                <p>Добавить</p>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script type="nomodule" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-</body></html>
+  </body>
+</html>
