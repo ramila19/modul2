@@ -1,11 +1,5 @@
-let btnClear = document.querySelector(".clear-btn");
-let inp = document.querySelector("input");
-let inp_div = document.querySelector(".inp-div");
-let inp_list = document.querySelector(".inp-list");
-let btnAdd = document.querySelector(".btn-add");
-let ul_div = document.querySelector(".ul-div");
-let sortImg = document.querySelector(".image-sort img");
-let reverseImg = document.querySelector(".image-reverse img");
+let sortImg = document.querySelector(".sortImg img");
+let reverseImg = document.querySelector(".reverseImg img");
 sortImg.addEventListener("mouseover", () => {
   sortImg.src = "pictures/Group 73.svg";
 });
@@ -18,6 +12,7 @@ reverseImg.addEventListener("mouseover", () => {
 reverseImg.addEventListener("mouseout", () => {
   reverseImg.src = "pictures/Group 90.svg";
 });
+let btnClear = document.querySelector(".clearButton");
 btnClear.addEventListener("mouseover", () => {
   btnClear.style.background = "purple";
   btnClear.style.color = "white";
@@ -31,6 +26,11 @@ btnClear.addEventListener("mouseout", (e) => {
 btnClear.addEventListener("click", () => {
   inp.value = "";
 });
+let inp = document.querySelector("input");
+let inp_div = document.querySelector(".inputAll");
+let inp_list = document.querySelector(".inputList");
+let btnAdd = document.querySelector(".buttonAdd");
+let ul_div = document.querySelector(".ulDiv");
 let bol = false;
 let a = 0;
 const listItems = [];
@@ -41,12 +41,12 @@ document.addEventListener("keyup", function (event) {
       p = document.createElement("p");
       p.innerHTML = inp.value;
       btn = document.createElement("button");
-      btn.classList.add("delete-btn");
+      btn.classList.add("deleteButton");
       btn.innerHTML = btnClear.innerHTML;
       new_div_li = document.createElement("li");
-      new_div_li.classList.add("li-div");
+      new_div_li.classList.add("liDiv");
       new_div = document.createElement("div");
-      new_div.classList.add("list-text");
+      new_div.classList.add("listText");
       new_div.append(p);
       new_div.append(btn);
       new_div_li.append(new_div);
@@ -56,7 +56,7 @@ document.addEventListener("keyup", function (event) {
       a += 1;
       ul_div.append(new_div_li);
       ul_div.style.padding = "7.52px 0";
-      pInp = document.querySelector(".list-text p");
+      pInp = document.querySelector(".listText p");
       if ((inp.value.length / pInp.offsetWidth) * 100 > 14) {
         p.style.overflowX = "scroll";
       }
@@ -66,12 +66,6 @@ document.addEventListener("keyup", function (event) {
         inp_list.style.display = "flex";
         btnClear.style.justifyContent = "center";
         inp.focus();
-        if (ul_div.children.length > 5) {
-          ul_div.style.overflowY = "scroll";
-          ul_div.scrollTop = ul_div.scrollHeight;
-          ul_div.style.paddingTop = "5px";
-          ul_div.style.paddingBottom = "0px";
-        }
       });
       if (ul_div.children.length > 5) {
         ul_div.style.overflowY = "scroll";
@@ -88,7 +82,6 @@ document.addEventListener("keyup", function (event) {
 });
 function styleFunction() {
   inp_list.style.display = "none";
-  // inp_list.style.padding = "11.52px 11.52px 11.52px 16.52px";
   inp.focus();
 }
 function dragStart() {
@@ -110,14 +103,14 @@ function dragDrop() {
   this.classList.remove("over");
 }
 function swapItems(fromIndex, toIndex) {
-  const itemOne = listItems[fromIndex].querySelector(".list-text");
-  const itemTwo = listItems[toIndex].querySelector(".list-text");
+  const itemOne = listItems[fromIndex].querySelector(".listText");
+  const itemTwo = listItems[toIndex].querySelector(".listText");
   listItems[fromIndex].appendChild(itemTwo);
   listItems[toIndex].appendChild(itemOne);
 }
 function addDragDrop() {
-  const draggables = document.querySelectorAll(".li-div");
-  const dragListItems = document.querySelectorAll(".ul-div li");
+  const draggables = document.querySelectorAll(".liDiv");
+  const dragListItems = document.querySelectorAll(".ulDiv li");
   draggables.forEach((draggable) => {
     draggable.addEventListener("dragstart", dragStart);
   });
@@ -130,7 +123,7 @@ function addDragDrop() {
 }
 function sortList() {
   arrSorting = [];
-  list = document.querySelectorAll(".list-text p");
+  list = document.querySelectorAll(".listText p");
   list.forEach((item) => {
     arrSorting.push(item.innerHTML);
   });
@@ -144,7 +137,7 @@ function sortList() {
 }
 function reverseList() {
   arrSorting = [];
-  list = document.querySelectorAll(".list-text p");
+  list = document.querySelectorAll(".listText p");
   list.forEach((item) => {
     arrSorting.push(item.innerHTML);
   });
@@ -156,7 +149,7 @@ function reverseList() {
   reverseImg.style.display = "none";
 }
 function deleteList() {
-  btnDel = document.querySelectorAll(".delete-btn");
+  btnDel = document.querySelectorAll(".deleteButton");
   btnDel.forEach((item) => {
     item.addEventListener("mouseover", (event) => {
       item.style.background = "purple";
