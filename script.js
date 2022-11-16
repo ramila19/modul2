@@ -36,49 +36,7 @@ let a = 0;
 const listItems = [];
 document.addEventListener("keyup", function (event) {
   if (event.keyCode === 13) {
-    if(btnAdd.value == ''){
-      ul_div.style.display = "block";
-      p = document.createElement("p");
-      p.innerHTML = inp.value;
-      btn = document.createElement("button");
-      btn.classList.add("deleteButton");
-      btn.innerHTML = btnClear.innerHTML;
-      new_div_li = document.createElement("li");
-      new_div_li.classList.add("liDiv");
-      new_div = document.createElement("div");
-      new_div.classList.add("listText");
-      new_div.append(p);
-      new_div.append(btn);
-      new_div_li.append(new_div);
-      new_div_li.setAttribute("data-index", a);
-      new_div_li.setAttribute("draggable", "true");
-      listItems.push(new_div_li);
-      a += 1;
-      ul_div.append(new_div_li);
-      ul_div.style.padding = "7.52px 0";
-      pInp = document.querySelector(".listText p");
-      if ((inp.value.length / pInp.offsetWidth) * 100 > 14) {
-        p.style.overflowX = "scroll";
-      }
-      inp.value = "";
-      btnAdd.addEventListener("click", () => {
-        inp_list.style.display = "block";
-        inp_list.style.display = "flex";
-        btnClear.style.justifyContent = "center";
-        inp.focus();
-      });
-      if (ul_div.children.length > 5) {
-        ul_div.style.overflowY = "scroll";
-        ul_div.scrollTop = ul_div.scrollHeight;
-        ul_div.style.paddingTop = "5px";
-        ul_div.style.paddingBottom = "0px";
-      }
-      sortImg.addEventListener("click", sortList);
-      deleteList();
-      addDragDrop();
-      styleFunction();
-    }
-    else if (inp.value.trim().length != 0) {
+    if (inp.value.trim().length != 0) {
       ul_div.style.display = "block";
       p = document.createElement("p");
       p.innerHTML = inp.value;
